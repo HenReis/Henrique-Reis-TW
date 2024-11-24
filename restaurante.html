@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurante Sabor & Tradição</title>
+  <!-- Link para a Biblioteca AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      color: #4a4a4a;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #f8efe9;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #8b572a;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: #7e685a;
+    }
+
+    nav {
+      background-color: #8b572a;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      margin: 0 15px;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: url('imagens/background.jpg') no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero h2 {
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 2rem;
+    }
+
+    section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: #8b572a;
+      margin-bottom: 1rem;
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .menu-item {
+      background: #f8efe9;
+      border: 1px solid #e2ddd5;
+      border-radius: 5px;
+      padding: 1rem;
+      width: 300px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .menu-item img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .menu-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background-color: #8b572a;
+      color: white;
+      text-align: center;
+      padding: 0.5rem;
+      animation: fadeIn 1s ease-in-out;
+      margin-top: auto;
+    }
+
+    footer p {
+      font-size: 0.8rem;
+    }
+
+    /* Animação para o rodapé */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .menu-item {
+        width: 100%;
+      }
+
+      .hero h2 {
+        font-size: 1.5rem;
+      }
+
+      .contact-container {
+        display: block;
+      }
+
+      .map-container {
+        width: 100%;
+        height: 300px;
+      }
+
+      .contact-info {
+        margin-top: 20px;
+      }
+    }
+
+    /* Estilo para o iframe do Google Maps */
+    .map-container {
+      width: 48%;
+      height: 450px;
+      border: 5px solid #8b572a;
+      float: left;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Estilo para as informações de contacto */
+    .contact-info {
+      width: 48%;
+      padding: 20px;
+      float: left;
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    .contact-info p {
+      margin-bottom: 10px;
+    }
+
+    /* Caixa de mensagem não redimensionável */
+    textarea {
+      resize: none;
+      width: 100%;
+      height: 100px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    /* Ajuste da largura do formulário */
+    form {
+      margin-top: 20px;
+    }
+
+    form input, form button {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    form button {
+      background-color: #8b572a;
+      color: white;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #6b3c1f;
+    }
+  </style>
+</head>
+<body>
+  <header data-aos="fade-down">
+    <h1>Restaurante Sabor & Tradição</h1>
+    <p>Sabores autênticos para momentos inesquecíveis</p>
+  </header>
+  <nav data-aos="fade-up">
+    <a href="#sobre">Sobre Nós</a>
+    <a href="#menu">Menu</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <section class="hero" data-aos="fade-up">
+    <h2>Culinária tradicional com um toque moderno</h2>
+  </section>
+  <section id="sobre" class="about" data-aos="fade-up">
+    <h2>Sobre Nós</h2>
+    <div style="background-color: #f8efe9; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+      <p>Bem-vindo ao Restaurante Sabor & Tradição, onde a nossa missão é proporcionar uma experiência gastronômica única. Aqui, a tradição se encontra com a inovação, e cada prato conta uma história que combina o melhor da culinária portuguesa com um toque moderno e criativo. Localizado no coração do Porto, somos o local perfeito para aqueles que buscam sabores autênticos e uma experiência inesquecível.</p>
+  
+      <p>O ambiente acolhedor e elegante do nosso restaurante foi cuidadosamente pensado para que cada refeição seja mais do que uma simples refeição. Quer seja um jantar em família, uma celebração especial ou um encontro entre amigos, o Sabor & Tradição é o lugar ideal para momentos memoráveis.</p>
+  
+      <p>Cada prato que servimos é preparado com ingredientes frescos e de qualidade, sempre com o maior carinho pela boa gastronomia. A nossa equipa de chefs apaixonados trabalha com dedicação para criar pratos que respeitam as raízes da culinária portuguesa, enquanto surpreendem os paladares mais exigentes com novas combinações de sabores.</p>
+  
+      <p>Convidamos você a explorar o nosso menu e descobrir os sabores que fazem parte da nossa história e da nossa tradição. No Sabor & Tradição, cada refeição é uma celebração do melhor que a gastronomia tem para oferecer, e estamos ansiosos para proporcionar-lhe uma experiência única.</p>
+    </div>
+  </section>
+  
+  <section id="menu" data-aos="fade-up">
+    <h2>Nosso Menu</h2>
+    <div class="menu">
+      <!-- 1ª Linha -->
+      <div class="menu-item" data-aos="fade-up">
+        <img src="imagens/salada.jpg" alt="Salada Fresca">
+        <h3>Salada Fresca</h3>
+        <p>Verduras e legumes frescos, com molho de mostarda. €9</p>
+      </div>
+      <div class="menu-item" data-aos="fade-up">
+        <img src="imagens/bife.jpg" alt="Bife Angus">
+        <h3>Bife Angus</h3>
+        <p>Carne premium grelhada à perfeição. €20</p>
+      </div>
+      <div class="menu-item" data-aos="fade-up">
+        <img src="imagens/vegetariano.jpg" alt="Prato Vegetariano">
+        <h3>Prato Vegetariano</h3>
+        <p>Uma deliciosa combinação de vegetais grelhados e arroz. €15</p>
+      </div>
+      <div class="menu-item" data-aos="fade-up">
+        <img src="imagens/sobremesa3.jpg" alt="Sobremesa de Chocolate">
+        <h3>Sobremesa de Chocolate</h3>
+        <p>Rich chocolate mousse com frutas vermelhas. €7</p>
+      </div>
+
+      <!-- 2ª Linha -->
+      <div class="menu-item" data-aos="fade-up">
+        <img src="imagens/pasta.jpg" alt="Pasta">
+        <h3>Pasta ao Pesto</h3>
+        <p>Pasta fresca com molho pesto. €12</p>
+      </div>
+      <div class="menu-item" data-aos="fade-up">
+        <img src="imagens/frango.jpg" alt="Frango Grelhado">
+        <h3>Frango Grelhado</h3>
+        <p>Frango grelhado com ervas e limão. €14</p>
+      </div>
+      <div class="menu-item" data-aos="fade-up">
+        <img src="imagens/risoto.jpg" alt="Risoto de Cogumelos">
+        <h3>Risoto de Cogumelos</h3>
+        <p>Risoto cremoso com cogumelos frescos. €16</p>
+      </div>
+      <div class="menu-item" data-aos="fade-up">
+        <img src="imagens/sobremesa1.jpg" alt="Tiramisu">
+        <h3>Tiramisu</h3>
+        <p>Sobremesa clássica italiana. €8</p>
+      </div>
+
+      <!-- 3ª Linha -->
+      <div class="menu-item" data-aos="fade-up">
+        <img src="imagens/peixe.jpg" alt="Peixe Grelhado">
+        <h3>Peixe Grelhado</h3>
+        <p>Peixe fresco grelhado com azeite e limão. €18</p>
+      </div>
+      <div class="menu-item" data-aos="fade-up">
+        <img src="imagens/lombo.jpg" alt="Lombo de Porco">
+        <h3>Lombo de Porco</h3>
+        <p>Lombo suculento com molho de maçã. €19</p>
+      </div>
+      <div class="menu-item" data-aos="fade-up">
+        <img src="imagens/sopa.jpg" alt="Sopa de Abóbora">
+        <h3>Sopa de Abóbora</h3>
+        <p>Sopa cremosa e reconfortante. €5</p>
+      </div>
+      <div class="menu-item" data-aos="fade-up">
+        <img src="imagens/gelado.jpg" alt="Gelado Artesanal">
+        <h3>Gelado Artesanal</h3>
+        <p>Gelado caseiro de baunilha. €6</p>
+      </div>
+
+      <!-- 4ª Linha -->
+      <div class="menu-item" data-aos="fade-up">
+        <img src="imagens/salada-fruta.jpg" alt="Salada de Frutas">
+        <h3>Salada de Frutas</h3>
+        <p>Frutas frescas da estação. €5</p>
+      </div>
+      <div class="menu-item" data-aos="fade-up">
+        <img src="imagens/pudim.jpg" alt="Pudim de Leite">
+        <h3>Pudim de Leite</h3>
+        <p>Pudim cremoso de leite. €6</p>
+      </div>
+      <div class="menu-item" data-aos="fade-up">
+        <img src="imagens/pizza.jpg" alt="Pizza de Calabresa">
+        <h3>Pizza de Calabresa</h3>
+        <p>Pizza com molho de tomate, queijo e calabresa. €13</p>
+      </div>
+      <div class="menu-item" data-aos="fade-up">
+        <img src="imagens/brownie.jpg" alt="Brownie de Chocolate">
+        <h3>Brownie de Chocolate</h3>
+        <p>Brownie com calda de chocolate. €7</p>
+      </div>
+    </div>
+  </section>
+  <section id="contacto" data-aos="fade-up">
+    <h2>Contacto</h2>
+    <div class="contact-container">
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10083.375897883295!2d-8.61262359999999!3d41.1496617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2468ec99999b5b%3A0x12e206d37f0c8b0!2sRua%20Santa%20Catarina%2C%20400%2C%20Porto%2C%20Portugal!5e0!3m2!1spt-PT!2spt!4v1663316852221!5m2!1spt-PT!2spt" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <!-- Horário abaixo do mapa -->
+        <p style="font-size: 0.9rem; color: #4a4a4a; margin-top: 1rem; text-align: center;">Horário de Funcionamento: <br> Segunda a Sábado: 12:00 - 22:00 | Domingo: Fechado</p>
+      </div>
+      <div class="contact-info">
+        <p><strong>Morada:</strong> Rua de Santa Catarina, 400, Porto</p>
+        <p><strong>Telefone:</strong> +351 912 345 678</p>
+        <p><strong>Email:</strong> contacto@sabortradição.pt</p>
+        <form action="mailto:contato@sabortradicao.pt" method="post" enctype="text/plain">
+          <label for="name">Nome:</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <label for="message">Mensagem:</label>
+          <textarea id="message" name="message" required></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <p>&copy; 2024 Restaurante Sabor & Tradição. Todos os direitos reservados-Henrique Reis.</p>
+  </footer>
+  
+  <!-- Script para inicializar AOS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  </body>
+  </html>
+  
