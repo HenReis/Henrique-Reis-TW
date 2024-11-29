@@ -1,0 +1,191 @@
+/* Reset e configurações básicas */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background-color: #f9f6f1;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-image: url('images/background.jpg'); /* Adicione o caminho da imagem aqui */
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+section {
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Seção Sobre Nós */
+section#sobre-nos {
+  background-color: #ede0d4;
+  padding: 2rem 1rem;
+  border-bottom: 2px solid #d3c0a5;
+}
+
+/* Menu */
+section#menu {
+  padding-top: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.grid .item {
+  background-color: #fff;
+  border: 1px solid #d3c0a5;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.grid .item:hover {
+  transform: scale(1.05);
+}
+
+.grid .item img {
+  width: 100%;
+  height: auto;
+}
+
+.grid .item h3 {
+  font-size: 1.2rem;
+  color: #7f5539;
+  margin-top: 0.5rem;
+}
+
+.grid .item p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.grid .item .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Localização */
+/* Ajustes para o layout da localização */
+.row {
+  display: flex;
+  flex-wrap: nowrap; /* Sem quebra de linha */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.mapa, .formulario {
+  flex: 1 1 50%; /* Cada um ocupa 50% do espaço */
+  height: 400px; /* Altura uniforme */
+  box-sizing: border-box;
+}
+
+.mapa {
+  order: 1; /* Mapa à esquerda */
+}
+
+/* Estilo para o mapa */
+.mapa iframe {
+  width: 100%;
+  height: 100%;
+  border: 5px solid #6a4e23; /* Borda castanha */
+  border-radius: 10px;
+}
+
+.formulario {
+  order: 2; /* Formulário à direita */
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea, button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #f8b400;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e89c00;
+}
+
+
+/* Footer */
+footer {
+  background-color: #7f5539;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
